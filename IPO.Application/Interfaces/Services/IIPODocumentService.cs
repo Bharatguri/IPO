@@ -3,12 +3,13 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace IPO.Application.Interfaces
+namespace IPO.Application.Interfaces.Services
 {
-    public interface IPODocumentRepository
+    public interface IIPODocumentService
     {
-        Task<IEnumerable<IPODocument>> GetAllAsync();
+        Task<List<IPODocument>> GetAllAsync();
         Task<IPODocument?> GetByIdAsync(int id);
+
         Task AddAsync(IPODocument entity);
         Task UpdateAsync(IPODocument entity);
         Task DeleteAsync(int id);

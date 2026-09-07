@@ -1,4 +1,5 @@
 ﻿using IPO.Domain.Entities;
+using IPO.Domain.Entities.Auth;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -26,6 +27,7 @@ namespace IPO.Infrastructure.Data
         public DbSet<Allotment> Allotments { get; set; }
         public DbSet<IPOApplication> IPOApplications { get; set; }
         public DbSet<Watchlist> Watchlists { get; set; }
+        public DbSet<Otp> Otps { get; set; }
 
     }
 }
