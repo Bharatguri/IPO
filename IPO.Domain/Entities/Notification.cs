@@ -1,4 +1,5 @@
 ﻿using IPO.Domain.Common;
+using IPO.Domain.Enums;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -11,7 +12,7 @@ namespace IPO.Domain.Entities
    
         public string Title { get; set; } = string.Empty;
         public string Message { get; set; } = string.Empty;
-        public string? Type { get; set; }
+        public NotificationType Type { get; set; }
         public bool IsRead { get; set; }
 
         [ForeignKey("UserId")]

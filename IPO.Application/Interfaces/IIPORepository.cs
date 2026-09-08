@@ -7,13 +7,13 @@ namespace IPO.Application.Interfaces
 {
     public interface IIPORepository
     {
-        Task<List<IPOs>> GetAllAsync();
-        Task<IPOs?> GetByIdAsync(int id);
-        Task<List<IPOs>> GetUpcomingAsync();
-        Task<List<IPOs>> GetOpenAsync();
-        Task<List<IPOs>> GetClosedAsync();
-        Task AddAsync(IPOs ipo);
-        Task UpdateAsync(IPOs ipo);
+        Task<List<Domain.Entities.IPO>> GetAllAsync();
+        Task<Domain.Entities.IPO?> GetByIdAsync(int id);
+        Task<List<Domain.Entities.IPO>> GetUpcomingAsync();
+        Task<List<Domain.Entities.IPO>> GetOpenAsync();
+        Task<List<Domain.Entities.IPO>> GetClosedAsync();
+        Task AddAsync(Domain.Entities.IPO ipo);
+        Task UpdateAsync(Domain.Entities.IPO ipo);
         Task DeleteAsync(int id);
     }
 }

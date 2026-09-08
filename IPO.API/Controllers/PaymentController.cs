@@ -44,7 +44,7 @@ namespace IPO.API.Controllers
         // POST: api/Payment
         [HttpPost]
         public async Task<IActionResult> Create(
-            [FromBody] Payments payment)
+            [FromBody] Payment payment)
         {
             if (!ModelState.IsValid)
             {
@@ -64,7 +64,7 @@ namespace IPO.API.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> Update(
             int id,
-            [FromBody] Payments payment)
+            [FromBody] Payment payment)
         {
             if (!ModelState.IsValid)
             {

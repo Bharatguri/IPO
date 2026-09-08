@@ -57,7 +57,7 @@ namespace IPO.Application.Services
 
         public async Task<IPOListDto> CreateAsync(IPOListDto request)
         {
-            var ipo = new IPOs
+            var ipo = new Domain.Entities.IPO
             {
                 CompanyName = request.CompanyName,
                 Symbol = request.Symbol,
@@ -113,7 +113,7 @@ namespace IPO.Application.Services
             return true;
         }
 
-        private static IPOListDto MapToListDto(IPOs ipo)
+        private static IPOListDto MapToListDto(Domain.Entities.IPO ipo)
         {
             return new IPOListDto
             {
@@ -134,7 +134,7 @@ namespace IPO.Application.Services
             };
         }
 
-        private static IPOListDto MapToDetailDto(IPOs ipo)
+        private static IPOListDto MapToDetailDto(Domain.Entities.IPO ipo)
         {
             return new IPOListDto
             {

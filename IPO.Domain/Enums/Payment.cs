@@ -4,7 +4,7 @@ using System.Text;
 
 namespace IPO.Domain.Enums
 {
-    public enum Payment
+    public enum PaymentMethod
     {
         Online = 1,
         Offline = 2,

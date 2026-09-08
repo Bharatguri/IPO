@@ -7,11 +7,11 @@ namespace IPO.Application.Interfaces
 {
     public interface IPaymentRepository
     {
-        Task<List<Payments>> GetAllAsync();
-        Task<Payments?> GetByIdAsync(int id);
+        Task<List<Payment>> GetAllAsync();
+        Task<Payment?> GetByIdAsync(int id);
 
-        Task AddAsync(Payments entity);
-        Task UpdateAsync(Payments entity);
+        Task AddAsync(Payment entity);
+        Task UpdateAsync(Payment entity);
         Task DeleteAsync(int id);
     }
 }

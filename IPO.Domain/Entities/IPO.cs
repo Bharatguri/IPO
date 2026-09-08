@@ -6,7 +6,7 @@ using System.Text;
 
 namespace IPO.Domain.Entities
 {
-    public class IPOs : AuditableEntity
+    public class IPO : AuditableEntity
     {
         public string CompanyName { get; set; } = string.Empty;
         public string Symbol { get; set; } = string.Empty;
@@ -16,8 +16,8 @@ namespace IPO.Domain.Entities
         public DateTime OpenDate { get; set; }
         public DateTime CloseDate { get; set; }
         public DateTime? ListingDate { get; set; }
-        public decimal PriceFrom { get; set; }
-        public decimal PriceTo { get; set; }
+        public decimal PriceMin  { get; set; }
+        public decimal PriceMax { get; set; }
         public int LotSize { get; set; }
         public decimal IssueSize { get; set; }
         public string? ImageUrl { get; set; }

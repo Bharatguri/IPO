@@ -17,43 +17,43 @@ namespace IPO.Infrastructure.Repositories
             _context = context;
         }
 
-        public async Task<List<Payments>> GetAllAsync()
+        public async Task<List<Payment>> GetAllAsync()
         {
             return await _context.Payments
                 .ToListAsync();
         }
 
-        public async Task<Payments?> GetByIdAsync(int id)
+        public async Task<Payment?> GetByIdAsync(int id)
         {
             return await _context.Payments
                 .FirstOrDefaultAsync(x => x.Id == id);
         }
 
-        public async Task<List<Payments>> GetUpcomingAsync()
+        public async Task<List<Payment>> GetUpcomingAsync()
         {
             return await _context.Payments
                 .ToListAsync();
         }
 
-        public async Task<List<Payments>> GetOpenAsync()
+        public async Task<List<Payment>> GetOpenAsync()
         {
             return await _context.Payments
                 .ToListAsync();
         }
 
-        public async Task<List<Payments>> GetClosedAsync()
+        public async Task<List<Payment>> GetClosedAsync()
         {
             return await _context.Payments  
                 .ToListAsync();
         }
 
-        public async Task AddAsync(Payments payment)
+        public async Task AddAsync(Payment payment)
         {
             await _context.Payments.AddAsync(payment);
             await _context.SaveChangesAsync();
         }
 
-        public async Task UpdateAsync(Payments payment)
+        public async Task UpdateAsync(Payment payment)
         {
             _context.Payments.Update(payment);
             await _context.SaveChangesAsync();

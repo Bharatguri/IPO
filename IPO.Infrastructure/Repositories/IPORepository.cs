@@ -14,43 +14,43 @@ namespace IPO.Infrastructure.Repositories
             _context = context;
         }
 
-        public async Task<List<IPOs>> GetAllAsync()
+        public async Task<List<Domain.Entities.IPO>> GetAllAsync()
         {
             return await _context.IPOs
                 .ToListAsync();
         }
 
-        public async Task<IPOs?> GetByIdAsync(int id)
+        public async Task<Domain.Entities.IPO?> GetByIdAsync(int id)
         {
             return await _context.IPOs
                 .FirstOrDefaultAsync(x => x.Id == id);
         }
 
-        public async Task<List<IPOs>> GetUpcomingAsync()
+        public async Task<List<Domain.Entities.IPO>> GetUpcomingAsync()
         {
             return await _context.IPOs
                 .ToListAsync();
         }
 
-        public async Task<List<IPOs>> GetOpenAsync()
+        public async Task<List<Domain.Entities.IPO>> GetOpenAsync()
         {
             return await _context.IPOs
                 .ToListAsync();
         }
 
-        public async Task<List<IPOs>> GetClosedAsync()
+        public async Task<List<Domain.Entities.IPO>> GetClosedAsync()
         {
             return await _context.IPOs
                 .ToListAsync();
         }
 
-        public async Task AddAsync(IPOs ipo)
+        public async Task AddAsync(Domain.Entities.IPO ipo)
         {
             await _context.IPOs.AddAsync(ipo);
             await _context.SaveChangesAsync();
         }
 
-        public async Task UpdateAsync(IPOs ipo)
+        public async Task UpdateAsync(Domain.Entities.IPO ipo)
         {
             _context.IPOs.Update(ipo);
             await _context.SaveChangesAsync();

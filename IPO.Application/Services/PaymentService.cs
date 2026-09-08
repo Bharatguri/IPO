@@ -17,22 +17,22 @@ namespace IPO.Application.Services
             _paymentRepository = paymentRepository;
         }
 
-        public async Task<List<Payments>> GetAllAsync()
+        public async Task<List<Payment>> GetAllAsync()
         {
             return await _paymentRepository.GetAllAsync();
         }
 
-        public async Task<Payments?> GetByIdAsync(int id)
+        public async Task<Payment?> GetByIdAsync(int id)
         {
             return await _paymentRepository.GetByIdAsync(id);
         }
 
-        public async Task AddAsync(Payments entity)
+        public async Task AddAsync(Payment entity)
         {
             await _paymentRepository.AddAsync(entity);
         }
 
-        public async Task UpdateAsync(Payments entity)
+        public async Task UpdateAsync(Payment entity)
         {
             await _paymentRepository.UpdateAsync(entity);
         }

@@ -4,10 +4,9 @@ using System.Text;
 
 namespace IPO.Domain.Enums
 {
-    public enum AllotmentStatus
+    public enum AccountType
     {
-        Pending = 1,
-        Alloted = 2,
-        NotAlloted = 3
+        CDSL = 0,
+        NSDL = 1
     }
 }

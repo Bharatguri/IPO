@@ -12,7 +12,7 @@ namespace IPO.Domain.Entities
 
         [ForeignKey("IPOId")]
         public int IPOId { get; set; }
-        public IPOs IPOs { get; set; }
+        public IPO IPOs { get; set; }
 
         [ForeignKey("UserId")]
         public int UserId { get; set; }
