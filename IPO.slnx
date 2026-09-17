@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="IPO.API/IPO.API.csproj" Id="da9ce98f-5024-4e16-91d1-198edb58fd17" />
+  <Project Path="IPO.Application/IPO.Application.csproj" Id="e9e4ccf8-ecb7-4d56-b962-d7c336ad917d" />
+  <Project Path="IPO.Domain/IPO.Domain.csproj" Id="b9620ad5-ebff-404c-b2c3-3478a8d6edf0" />
+  <Project Path="IPO.Infrastructure/IPO.Infrastructure.csproj" Id="6f7b3b80-44e5-4959-be33-2cf2a7adef7b" />
+</Solution>
