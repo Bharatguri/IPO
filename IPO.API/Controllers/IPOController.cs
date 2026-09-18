@@ -1,5 +1,6 @@
 ﻿using IPO.Application.DTOs;
 using IPO.Application.Interfaces.Services;
+using IPO.Application.Online;
 using Microsoft.AspNetCore.Mvc;
 
 namespace IPO.API.Controllers
@@ -9,11 +10,16 @@ namespace IPO.API.Controllers
     public class IPOController : ControllerBase
     {
         private readonly IIPOService _ipoService;
+        private readonly IIPOSyncService _ipoSyncService;
 
-        public IPOController(IIPOService ipoService)
+        public IPOController(
+            IIPOService ipoService,
+            IIPOSyncService ipoSyncService)
         {
             _ipoService = ipoService;
+            _ipoSyncService = ipoSyncService;
         }
+
 
         [HttpGet]
         public async Task<IActionResult> GetAll()
@@ -103,5 +109,19 @@ namespace IPO.API.Controllers
 
             return NoContent();
         }
+
+        [HttpPost("sync")]
+        public async Task<IActionResult> Sync(
+    CancellationToken cancellationToken)
+        {
+            var count = await _ipoSyncService.SyncAsync(cancellationToken);
+
+            return Ok(new
+            {
+                message = "IPO data synchronization completed.",
+                recordsProcessed = count
+            });
+        }
+
     }
 }

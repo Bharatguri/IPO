@@ -1,19 +1,20 @@
-﻿using IPO.Domain.Entities;
-using System;
-using System.Collections.Generic;
+﻿using System;using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
+using IPO.Domain.Entities;
+using IPOEntity = IPO.Domain.Entities.IPO;
 
 namespace IPO.Application.Interfaces
 {
     public interface IIPORepository
     {
-        Task<List<Domain.Entities.IPO>> GetAllAsync();
-        Task<Domain.Entities.IPO?> GetByIdAsync(int id);
-        Task<List<Domain.Entities.IPO>> GetUpcomingAsync();
-        Task<List<Domain.Entities.IPO>> GetOpenAsync();
-        Task<List<Domain.Entities.IPO>> GetClosedAsync();
-        Task AddAsync(Domain.Entities.IPO ipo);
-        Task UpdateAsync(Domain.Entities.IPO ipo);
+        Task<List<IPOEntity>> GetAllAsync();
+        Task<IPOEntity?> GetByIdAsync(int id);
+        Task<List<IPOEntity>> GetUpcomingAsync();
+        Task<List<IPOEntity>> GetOpenAsync();
+        Task<List<IPOEntity>> GetClosedAsync();
+        Task AddAsync(IPOEntity ipo);
+        Task UpdateAsync(IPOEntity ipo);
         Task DeleteAsync(int id);
     }
 }

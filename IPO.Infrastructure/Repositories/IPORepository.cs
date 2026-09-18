@@ -1,5 +1,6 @@
 ﻿using IPO.Application.Interfaces;
 using IPO.Domain.Entities;
+using IPO.Domain.Enums;
 using IPO.Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
 
@@ -29,18 +30,24 @@ namespace IPO.Infrastructure.Repositories
         public async Task<List<Domain.Entities.IPO>> GetUpcomingAsync()
         {
             return await _context.IPOs
+                .Where(x => x.Status == IPOStatus.Upcoming)
+                .OrderBy(x => x.OpenDate)
                 .ToListAsync();
         }
 
         public async Task<List<Domain.Entities.IPO>> GetOpenAsync()
         {
             return await _context.IPOs
+                .Where(x => x.Status == IPOStatus.Open)
+                .OrderBy(x => x.CloseDate)
                 .ToListAsync();
         }
 
         public async Task<List<Domain.Entities.IPO>> GetClosedAsync()
         {
             return await _context.IPOs
+                .Where(x => x.Status == IPOStatus.Closed)
+                .OrderByDescending(x => x.CloseDate)
                 .ToListAsync();
         }
 

@@ -1,8 +1,10 @@
 using IPO.API.Configuration;
 using IPO.API.Services;
 using IPO.Application.EmailServises;
+using IPO.Application.ExternalServices;
 using IPO.Application.Interfaces;
 using IPO.Application.Interfaces.Services;
+using IPO.Application.Online;
 using IPO.Application.Services;
 using IPO.Infrastructure.Data;
 using IPO.Infrastructure.Repositories;
@@ -22,6 +24,13 @@ builder.Services.AddDbContext<ApplicationDbContext>(option => option.UseSqlServe
 
 builder.Services.AddScoped<IIPOService, IPOService>();
 builder.Services.AddScoped<IIPORepository, IPORepository>();
+builder.Services.AddScoped<IIPOSyncService, IPOSyncService>();
+
+builder.Services.AddHttpClient<IIpoDataProvider, NseIpoDataProvider>(client =>
+{
+    client.Timeout = TimeSpan.FromSeconds(30);
+});
+
 builder.Services.AddScoped<ICompanyService, CompanyService>();
 builder.Services.AddScoped<ICompanyRepository, CompanyRepository>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
