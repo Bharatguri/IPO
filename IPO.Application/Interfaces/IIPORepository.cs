@@ -16,5 +16,8 @@ namespace IPO.Application.Interfaces
         Task AddAsync(IPOEntity ipo);
         Task UpdateAsync(IPOEntity ipo);
         Task DeleteAsync(int id);
+        Task<Domain.Entities.IPO?> GetByExternalIdAsync(string externalId);
+
+
     }
 }

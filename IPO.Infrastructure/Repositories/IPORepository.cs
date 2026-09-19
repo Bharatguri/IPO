@@ -74,5 +74,10 @@ namespace IPO.Infrastructure.Repositories
 
             await _context.SaveChangesAsync();
         }
+        public async Task<Domain.Entities.IPO?> GetByExternalIdAsync(string externalId)
+        {
+            return await _context.IPOs
+                .FirstOrDefaultAsync(x => x.ExternalId == externalId);
+        }
     }
 }
